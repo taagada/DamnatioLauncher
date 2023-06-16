@@ -53,7 +53,7 @@
         </div>
         <div id="settingsTabMinecraft" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Minecraft Settings</span>
+                <span class="settingsTabHeaderText">Options Minecraft</span>
                 <span class="settingsTabHeaderDesc">Options related to game launch.</span>
             </div>
             <div id="settingsGameResolutionContainer">
@@ -102,17 +102,7 @@
         <div id="settingsTabMods" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
                 <span class="settingsTabHeaderText">Mod Settings</span>
-                <span class="settingsTabHeaderDesc">Enable or disable mods.</span>
-            </div>
-            <div class="settingsSelServContainer">
-                <div class="settingsSelServContent">
-
-                </div>
-                <div class="settingsSwitchServerContainer">
-                    <div class="settingsSwitchServerContent">
-                        <button class="settingsSwitchServerButton">Switch</button>
-                    </div>
-                </div>
+                <span class="settingsTabHeaderDesc">Activer ou désactiver les mods optionnels.</span>
             </div>
             <div id="settingsModsContainer">
                 <div id="settingsReqModsContainer">
@@ -134,19 +124,6 @@
                         
                     </div>
                 </div>
-                <div id="settingsShadersContainer">
-                    <div class="settingsModsHeader">Shaderpacks</div>
-                    <div id="settingsShaderpackDesc">Enable or disable shaders. Please note, shaders will only run smoothly on powerful setups. You may add custom packs here.</div>
-                    <div id="settingsShaderpackWrapper">
-                        <button id="settingsShaderpackButton"> + </button>
-                        <div class="settingsSelectContainer">
-                            <div class="settingsSelectSelected" id="settingsShadersSelected">Select Shaderpack</div>
-                            <div class="settingsSelectOptions" id="settingsShadersOptions" hidden>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div id="settingsTabJava" class="settingsTab" style="display: none;">
@@ -154,16 +131,7 @@
                 <span class="settingsTabHeaderText">Java Settings</span>
                 <span class="settingsTabHeaderDesc">Manage the Java configuration (advanced).</span>
             </div>
-            <div class="settingsSelServContainer">
-                <div class="settingsSelServContent">
-
-                </div>
-                <div class="settingsSwitchServerContainer">
-                    <div class="settingsSwitchServerContent">
-                        <button class="settingsSwitchServerButton">Switch</button>
-                    </div>
-                </div>
-            </div>
+            
             <div id="settingsMemoryContainer">
                 <div id="settingsMemoryTitle">Memory</div>
                 <div id="settingsMemoryContent">
@@ -256,6 +224,16 @@
                 <span class="settingsTabHeaderText">Launcher Settings</span>
                 <span class="settingsTabHeaderDesc">Options related to the launcher itself.</span>
             </div>
+            <div class="settingsSelServContainer">
+                <div class="settingsSelServContent">
+
+                </div>
+                <div class="settingsSwitchServerContainer">
+                    <div class="settingsSwitchServerContent">
+                        <button class="settingsSwitchServerButton">Switch</button>
+                    </div>
+                </div>
+            </div>
             <div class="settingsFieldContainer">
                 <div class="settingsFieldLeft">
                     <span class="settingsFieldTitle">Allow Pre-Release Updates.</span>
@@ -297,7 +275,7 @@
                 <div id="settingsAboutCurrentContent">
                     <div id="settingsAboutCurrentHeadline">
                         <img id="settingsAboutLogo" src="./assets/images/SealCircle.png">
-                        <span id="settingsAboutTitle">Helios Launcher</span>
+                        <span id="settingsAboutTitle">Damnatio Launcher</span>
                     </div>
                     <div id="settingsAboutCurrentVersion">
                         <div id="settingsAboutCurrentVersionCheck">&#10003;</div>
@@ -311,10 +289,10 @@
                     </div>
                 </div>
                 <div id="settingsAboutButtons">
-                    <a href="https://github.com/dscalZi/HeliosLauncher" id="settingsAboutSourceButton" class="settingsAboutButton">Source (GitHub)</a>
+                    <a href="https://damnatio.eu/changelog" id="settingsAboutSourceButton" class="settingsAboutButton">Changelog</a>
                     <!-- The following must be included in third-party usage. -->
                     <!-- <a href="https://github.com/dscalzi/HeliosLauncher" id="settingsAboutSourceButton" class="settingsAboutButton">Original Source</a> -->
-                    <a href="https://github.com/dscalZi/HeliosLauncher/issues" id="settingsAboutSupportButton" class="settingsAboutButton">Support</a>
+                    <a href="https://damnatio.eu/support/tickets" id="settingsAboutSupportButton" class="settingsAboutButton">Support</a>
                     <a href="#" id="settingsAboutDevToolsButton" class="settingsAboutButton">DevTools Console</a>
                 </div>
             </div>
