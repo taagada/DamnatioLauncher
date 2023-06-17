@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/Siberkilleurs/DamnatioLauncher/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases.atom"/>
+  <title>Release notes from Damnatio Launcher</title>
+  <updated>2023-06-17T03:41:34+02:00</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/118847892/v2.0.4</id>
+    <updated>2023-06-17T00:48:38+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v2.0.4"/>
+    <title>Release v2.0.4 - Final Version of Launcher</title>
+    <content type="html">&lt;h2&gt;Release v2.0.4&lt;/h2&gt;
+&lt;p&gt;This update fixes a few issues with the Java discovery to make it more fault tolerant. Namely fixes the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Only check against the standard &lt;code&gt;java.version&lt;/code&gt; property to avoid obscure formats by different vendors. This also means that the build number is no longer collected.&lt;/li&gt;
+&lt;li&gt;If a JVM version format is not valid, warn and skip. Do not throw an error.&lt;/li&gt;
+&lt;li&gt;Add error handling around -XshowSettings invocation. This is to prevent derailing the Java discovery process in the event a nonexistent path is passed or an unrelated error occurs during command invocation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Fixes/Upgrades&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/d89b270c208f4d40dc7ff0844dee663d2d085f53/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/d89b270c208f4d40dc7ff0844dee663d2d085f53&quot;&gt;&lt;tt&gt;d89b270&lt;/tt&gt;&lt;/a&gt; Harden Java discovery logic, upgrade to Electron 24.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9e26b288fcd9b476c37cd0b2fadd6765c62a97bf/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9e26b288fcd9b476c37cd0b2fadd6765c62a97bf&quot;&gt;&lt;tt&gt;9e26b28&lt;/tt&gt;&lt;/a&gt; Fix RAM slider megabyte calculation.&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>dscalzi</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/9703873?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/118847892/v2.0.3</id>
+    <updated>2023-03-31T01:01:21+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v2.0.3"/>
+    <title>Release v2.0.3 - Improve Error Message for Users w/out a MC Profile</title>
+    <content type="html">&lt;h2&gt;Release v2.0.3&lt;/h2&gt;
+&lt;p&gt;This update improves the error message for users who have not set up a MC profile for their Microsoft account. This can happen if the user purchases the game (either through minecraft.net or Xbox Game Pass) and does not set up a profile, or if the user does not own the game at all. An improved error message will now notify the user of this.&lt;/p&gt;
+&lt;h3&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/22d2e064f354977e270fc05c479c2e5ee9031995/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/22d2e064f354977e270fc05c479c2e5ee9031995&quot;&gt;&lt;tt&gt;22d2e06&lt;/tt&gt;&lt;/a&gt; 2.0.3 - Improve error message for users without a mc profile.&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>dscalzi</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/9703873?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/118847892/v2.0.2</id>
+    <updated>2023-03-31T01:01:41+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v2.0.2"/>
+    <title>Release v2.0.2 - Make Version Regex More Lenient</title>
+    <content type="html">&lt;h2&gt;Release v2.0.2&lt;/h2&gt;
+&lt;p&gt;This is a bugfix for &lt;a href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v2.0.0&quot;&gt;release v2.0.0&lt;/a&gt;. Some Java distributions (Oracle) format their runtime versions differently than others. This update makes the regex more lenient to accomodate.&lt;/p&gt;
+&lt;p&gt;Explicit write permissions are now granted in the github actions config. This should prevent problems where forks cannot get release assets to upload due to less permissive repository defaults.&lt;/p&gt;
+&lt;h3&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ab3d4e9499ecb94ff9ffe8a3ccac8e89e8134fbb/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ab3d4e9499ecb94ff9ffe8a3ccac8e89e8134fbb&quot;&gt;&lt;tt&gt;ab3d4e9&lt;/tt&gt;&lt;/a&gt; 2.0.2 - Make version parse regex more lenient, grant explicit permissions to github actions.&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>dscalzi</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/9703873?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/118847892/v2.0.1</id>
+    <updated>2023-03-31T01:01:13+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v2.0.1"/>
+    <title>Release v2.0.1 - Fix Optional Java Build Version</title>
+    <content type="html">&lt;h2&gt;Release v2.0.1&lt;/h2&gt;
+&lt;p&gt;This is a bugfix for &lt;a href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v2.0.0&quot;&gt;release v2.0.0&lt;/a&gt;. Some Java distributions (Oracle) may omit the build number in certain places, such as registry keys. This fix allows the build number to be optional.&lt;/p&gt;
+&lt;h3&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/3295430c54a833bf43a98b5aa7905730c4356a0c/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/3295430c54a833bf43a98b5aa7905730c4356a0c&quot;&gt;&lt;tt&gt;3295430&lt;/tt&gt;&lt;/a&gt; 2.0.1 - Build is optional in Java versions (esp. Oracle).&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>dscalzi</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/9703873?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/118847892/v2.0.0</id>
+    <updated>2023-03-24T23:36:53+01:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v2.0.0"/>
+    <title>Release v2.0.0 - Major Rewrite (AssetGuard, JavaGuard, DistroManager)</title>
+    <content type="html">&lt;h2&gt;Release v2.0.0&lt;/h2&gt;
+&lt;p&gt;This release includes new implementations of several core mechanisms of Helios Launcher. The new implementations replace the Distribution manager, AssetGuard, and JavaGuard. All rewritten code leverages the full power of Typescript and modern Javascript APIs. This has resulted in a more maintainable, robust, and concise codebase. Remember, async/await was not even stable in Node when v1 was being written!&lt;/p&gt;
+&lt;p&gt;For technical details on the new implementations, see the helios-core release notes &lt;a href=&quot;https://github.com/dscalzi/helios-core/releases/tag/v2.0.0&quot;&gt;https://github.com/dscalzi/helios-core/releases/tag/v2.0.0&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Highlights&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for &lt;a href=&quot;https://github.com/dscalzi/helios-distribution-types/releases/tag/v1.2.0&quot;&gt;Helios Distribution Spec v1.2.0&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Support for SRV records in server status api (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;713484464&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/120&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/issues/120/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/120&quot;&gt;#120&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Java settings per server (through the distribution), and full support for pack-specific ram (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;828719592&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/154&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/issues/154/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/154&quot;&gt;#154&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Downloads are retried up to ten times. This will fix issues with the Mojang resource urls timing out.&lt;/li&gt;
+&lt;li&gt;Robust download error handling, you should never get stuck at 99% again.&lt;/li&gt;
+&lt;li&gt;RAM increments are now correctly resolved in increments of 512 MB (instead of 500MB).&lt;/li&gt;
+&lt;li&gt;..and much more! Check out the code changes &lt;g-emoji class=&quot;g-emoji&quot; alias=&quot;smile&quot; fallback-src=&quot;https://github.githubassets.com/images/icons/emoji/unicode/1f604.png&quot;&gt;😄&lt;/g-emoji&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Breaking Changes of Note&lt;/h3&gt;
+&lt;p&gt;As this is a rewrite, there are a lot of breaking changes. Most of the changes should be self evident, these might not be as obvious.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pack.xz format is no longer supported. Older versions of forge no longer ship as .pack.xz and even the JDK removed Pack200 starting in JDK 14. The solution to this is simple, host your jar files as &lt;code&gt;.jar&lt;/code&gt; and not as &lt;code&gt;.jar.pack.xz&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The location of the distribution url has changed. It is now stored in &lt;code&gt;exports.REMOTE_DISTRO_URL&lt;/code&gt; in distromanager.js (line 7).&lt;/li&gt;
+&lt;li&gt;Dev distribution must now be named &lt;code&gt;distribution_dev.json&lt;/code&gt;, instead of &lt;code&gt;dev_distribution.json&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Full changeset &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;1599493887&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/270&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/270/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/270&quot;&gt;#270&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Note for Forks&lt;/h3&gt;
+&lt;p&gt;Helios 1.x is no longer supported, I would &lt;strong&gt;highly recommend&lt;/strong&gt; upgrading your forks to v2 at the earliest convenience. If you have any questions, please ask them either on Discord or on the GitHub discussion for this release. Please make sure to test your upgrades before shipping to production. Report any issues you find in the base code, and they will be fixed. Thank you!&lt;/p&gt;</content>
+    <author>
+      <name>dscalzi</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/9703873?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/118847892/v1.10.0</id>
+    <updated>2023-03-20T01:16:41+01:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v1.10.0"/>
+    <title>Release v1.10.0 - 1.17+ Support, 2022 Maintenance</title>
+    <content type="html">&lt;h2&gt;Release v1.10.0&lt;/h2&gt;
+&lt;p&gt;This release includes support for launching Minecraft versions 1.17 and greater. Also included are numerous bugfixes and improvements.&lt;/p&gt;
+&lt;p&gt;Please note that this will be the last release of the 1.x line of Helios Launcher. A major refactor of the validation and download code (commonly known as AssetGuard) is in progress. Once complete, HeliosLauncher will be incremented to v2.0.0. Going forward, major refactors may warrant major version bumps. After v2 is complete, the next major development effort will be a rewrite of ProcessBuilder, enabling support for different modloaders (or lack thereof), including fabric and vanilla. That will likely land as v3.&lt;/p&gt;
+&lt;p&gt;More information on v2 will be posted in a v2 release candidate. All the changes are immediately available in &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;1599493887&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/270&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/270/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/270&quot;&gt;#270&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;1.17+ Support&lt;/h2&gt;
+&lt;p&gt;Support for Minecraft 1.17+ and greater was added in late 2022 via &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;1465264586&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/261&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/261/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/261&quot;&gt;#261&lt;/a&gt;. In 1.10.0, HeliosLauncher will use JDK 8 for any version of Minecraft below 1.17, and JDK 17 for 1.17 or greater. Java settings have been moved to per server instance to support this. This includes setting pack specific ram. The min and max ram values are still globally set by the launcher, but v2 will allow these to also be set on a per-server basis.&lt;/p&gt;
+&lt;h3&gt;Changelog&lt;/h3&gt;
+&lt;p&gt;Full diff can be viewed &lt;a href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/compare/v1.9.0...v1.10.0&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;New Features&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/e3ee03ef73f63bf9d8d9594bcbf4338cb91f0eb3/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/e3ee03ef73f63bf9d8d9594bcbf4338cb91f0eb3&quot;&gt;&lt;tt&gt;e3ee03e&lt;/tt&gt;&lt;/a&gt; 1.17+ Support / Java Settings by Instance (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;1465264586&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/261&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/261/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/261&quot;&gt;#261&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/fb586cca699b854d50945eba3b56b020bd6be9cd/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/fb586cca699b854d50945eba3b56b020bd6be9cd&quot;&gt;&lt;tt&gt;fb586cc&lt;/tt&gt;&lt;/a&gt; (Apple Silicon) aarch64 OpenJDK detect and install (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;1607691965&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/273&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/273/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/273&quot;&gt;#273&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Changes&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/248937c22df17ac5f2ce40d21b98f77fa8006ebc/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/248937c22df17ac5f2ce40d21b98f77fa8006ebc&quot;&gt;&lt;tt&gt;248937c&lt;/tt&gt;&lt;/a&gt; Improve logging.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/190bb4cf8523d2b27f26316a15716d3ecbcb47da/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/190bb4cf8523d2b27f26316a15716d3ecbcb47da&quot;&gt;&lt;tt&gt;190bb4c&lt;/tt&gt;&lt;/a&gt; Replace mojang status api.&lt;/li&gt;
+&lt;li&gt;Ugrade to Electron 23
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ecfe0de0fb724e0d5167956fb0b318799eae37dc/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ecfe0de0fb724e0d5167956fb0b318799eae37dc&quot;&gt;&lt;tt&gt;ecfe0de&lt;/tt&gt;&lt;/a&gt; Upgrade to Electron 23 &amp;amp; Node 18&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/1c598e79807d061cb024317fc85b2a0c78b75fe0/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/1c598e79807d061cb024317fc85b2a0c78b75fe0&quot;&gt;&lt;tt&gt;1c598e7&lt;/tt&gt;&lt;/a&gt; Upgrade to Electron 22&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/190bb4cf8523d2b27f26316a15716d3ecbcb47da/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/190bb4cf8523d2b27f26316a15716d3ecbcb47da&quot;&gt;&lt;tt&gt;190bb4c&lt;/tt&gt;&lt;/a&gt; Upgrade to Electron 21&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/fa47c9c42cab5acfdf67d604c454e379e9a65b58/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/fa47c9c42cab5acfdf67d604c454e379e9a65b58&quot;&gt;&lt;tt&gt;fa47c9c&lt;/tt&gt;&lt;/a&gt; Upgrade to Electron 20&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/e7dd171ceafe017f245fb653fe43310f43ab9983/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/e7dd171ceafe017f245fb653fe43310f43ab9983&quot;&gt;&lt;tt&gt;e7dd171&lt;/tt&gt;&lt;/a&gt; Upgrade to Electron 19&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/0bc74d9c66ee127083895e84f899ef6c7a543424/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/0bc74d9c66ee127083895e84f899ef6c7a543424&quot;&gt;&lt;tt&gt;0bc74d9&lt;/tt&gt;&lt;/a&gt; Upgrade to Electron 18&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/15fc12b625cef8e1a7459f24464337f8ae36df5f/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/15fc12b625cef8e1a7459f24464337f8ae36df5f&quot;&gt;&lt;tt&gt;15fc12b&lt;/tt&gt;&lt;/a&gt; Upgrade to Electron 17&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Fixes&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/45630c068c32b0161dccf645c552cd10b3e37207/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/45630c068c32b0161dccf645c552cd10b3e37207&quot;&gt;&lt;tt&gt;45630c0&lt;/tt&gt;&lt;/a&gt; Fix style violation.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/5d44cc3408a3315eee35c514ccf594c375cf25d9/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/5d44cc3408a3315eee35c514ccf594c375cf25d9&quot;&gt;&lt;tt&gt;5d44cc3&lt;/tt&gt;&lt;/a&gt; fix: Readme badge (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;1500493889&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/264&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/264/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/264&quot;&gt;#264&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9224531b62cb835e0d0050871d502c587f510b60/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9224531b62cb835e0d0050871d502c587f510b60&quot;&gt;&lt;tt&gt;9224531&lt;/tt&gt;&lt;/a&gt; fix: variable references (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;1244996937&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/227&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/227/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/227&quot;&gt;#227&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/2e1ab3c2660a209bbaa763ad842131866b09eb98/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/2e1ab3c2660a209bbaa763ad842131866b09eb98&quot;&gt;&lt;tt&gt;2e1ab3c&lt;/tt&gt;&lt;/a&gt; Fix expiration token date which return always NaN (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;1242335771&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/226&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/226/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/226&quot;&gt;#226&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ee61ea49793ecc84a5522fed857563431a570464/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ee61ea49793ecc84a5522fed857563431a570464&quot;&gt;&lt;tt&gt;ee61ea4&lt;/tt&gt;&lt;/a&gt; Improve handling of JVM arguments on the settings view.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/4e2c9ce3ecc4698e24af74620acbca2fd698cd19/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/4e2c9ce3ecc4698e24af74620acbca2fd698cd19&quot;&gt;&lt;tt&gt;4e2c9ce&lt;/tt&gt;&lt;/a&gt; Set user type to msa for msft accounts.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/15fc12b625cef8e1a7459f24464337f8ae36df5f/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/15fc12b625cef8e1a7459f24464337f8ae36df5f&quot;&gt;&lt;tt&gt;15fc12b&lt;/tt&gt;&lt;/a&gt; Fix deleting drop-in mods from the settings view.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ccf099a5cf3fc7c30c0cd789306c948eed79099f/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ccf099a5cf3fc7c30c0cd789306c948eed79099f&quot;&gt;&lt;tt&gt;ccf099a&lt;/tt&gt;&lt;/a&gt; Fix macOS executable name.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/b0927224885e4307ac787fe779d64d60b0c8bc7c/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/b0927224885e4307ac787fe779d64d60b0c8bc7c&quot;&gt;&lt;tt&gt;b092722&lt;/tt&gt;&lt;/a&gt; Calculate expiry date should not be async.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/fc289262a818beff64d173e33c83ec41e9fafe29/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/fc289262a818beff64d173e33c83ec41e9fafe29&quot;&gt;&lt;tt&gt;fc28926&lt;/tt&gt;&lt;/a&gt; Show GitHub actions build status in the README.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/a8c92ab272819ec5094512a0ca71bcb6784df3cd/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/a8c92ab272819ec5094512a0ca71bcb6784df3cd&quot;&gt;&lt;tt&gt;a8c92ab&lt;/tt&gt;&lt;/a&gt; Fix URL to ms auth documentation in comment.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/f6b787c526a93cc29ed9540090965a0390bc9a3e/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/f6b787c526a93cc29ed9540090965a0390bc9a3e&quot;&gt;&lt;tt&gt;f6b787c&lt;/tt&gt;&lt;/a&gt; Fix URL to ms auth documentation on README.&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>dscalzi</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/9703873?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/118847892/v1.9.0</id>
+    <updated>2022-02-12T02:35:00+01:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v1.9.0"/>
+    <title>Release v1.9.0 - Microsoft Authentication, 2021 Maintenance</title>
+    <content type="html">&lt;h2&gt;Release v1.9.0&lt;/h2&gt;
+&lt;p&gt;This update includes support for Microsoft Authentication. Mojang account lockout will begin on March 10, 2022. Please integrate these changes before then. Forks should constantly be in sync with master to get the latest changes, fixes, and features.&lt;/p&gt;
+&lt;p&gt;Is your network using Helios and its toolchain? Consider supporting its development &lt;a href=&quot;https://github.com/sponsors/dscalzi&quot;&gt;https://github.com/sponsors/dscalzi&lt;/a&gt;&lt;br&gt;
+Sponsors of a certain tier will be added to the README.&lt;/p&gt;
+&lt;h2&gt;Rewrite Update (v2) and &lt;code&gt;helios-core&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;The react-electron-typescript-webpack-etc toolchain is incredibly difficult to work with due to the complexities of getting all those third-party libraries to work together. Additionally, there are issues where third-party dependencies fall into disrepair or are extremely slow to update. This causes blocking issues when performing SEMVER-MAJOR upgrades (ie from webpack 4 to 5). I would much rather spend my available development hours on development, not getting these libraries to work together.&lt;/p&gt;
+&lt;p&gt;As a compromise, all new logic that is not explicitly tied to UI integration will be done in &lt;a href=&quot;https://github.com/dscalzi/helios-core&quot;&gt;&lt;code&gt;helios-core&lt;/code&gt;&lt;/a&gt;. Helios-core is a typescript library containing the core mechanisms of the launcher. The benefit of moving the core mechanisms into this library are that we can leverage the full power of TypeScript to produce code that is more reliable, testable, and maintainable. This library already houses the core Microsoft and Mojang authentication functionality, among other things. Existing code will gradually be moved over. The next two to be moved over will likely be java handling and an assetguard replacement.&lt;/p&gt;
+&lt;h3&gt;Changelog&lt;/h3&gt;
+&lt;p&gt;Full diff can be viewed &lt;a href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/compare/v1.8.0...v1.9.0&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;New Features&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/58e68c116c001ee36b8f504013f866d4b12d0db9/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/58e68c116c001ee36b8f504013f866d4b12d0db9&quot;&gt;&lt;tt&gt;58e68c1&lt;/tt&gt;&lt;/a&gt; Microsoft Authentication&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/cd1ca7edf50160214476cf02ff1f255771eb1dc8/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/cd1ca7edf50160214476cf02ff1f255771eb1dc8&quot;&gt;&lt;tt&gt;cd1ca7e&lt;/tt&gt;&lt;/a&gt; Add support for building arm64 dmg (Apple Silicon processors) (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;851393303&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/157&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/157/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/157&quot;&gt;#157&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Changes&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ad47617cd036fe7a5c3c7261b16b5004d9aa7701/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ad47617cd036fe7a5c3c7261b16b5004d9aa7701&quot;&gt;&lt;tt&gt;ad47617&lt;/tt&gt;&lt;/a&gt; Replace mojang.js with helios-core implementation.&lt;/li&gt;
+&lt;li&gt;Updated to Electron 16
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/2fdb217e64a7cb04f7d77b373dc83e9162f47fa4/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/2fdb217e64a7cb04f7d77b373dc83e9162f47fa4&quot;&gt;&lt;tt&gt;2fdb217&lt;/tt&gt;&lt;/a&gt; Electron 16.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/a2168da9997984a1252cd66d2da1417c36ce3c14/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/a2168da9997984a1252cd66d2da1417c36ce3c14&quot;&gt;&lt;tt&gt;a2168da&lt;/tt&gt;&lt;/a&gt; Electron 15 &amp;amp; Node 16 (skipped 14).&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/2c487f71ad55521b111be44c4355b9bcdaa35691/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/2c487f71ad55521b111be44c4355b9bcdaa35691&quot;&gt;&lt;tt&gt;2c487f7&lt;/tt&gt;&lt;/a&gt; Electron 13.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/cb8d1bb00fd177596616af6674e7a2a4c6556a7b/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/cb8d1bb00fd177596616af6674e7a2a4c6556a7b&quot;&gt;&lt;tt&gt;cb8d1bb&lt;/tt&gt;&lt;/a&gt; Electron 12 &amp;amp; Node 14.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/c1d36d2b03cca130dc3e9f4645ea79108384f97d/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/c1d36d2b03cca130dc3e9f4645ea79108384f97d&quot;&gt;&lt;tt&gt;c1d36d2&lt;/tt&gt;&lt;/a&gt; Fork discord-rpc and remove native dependencies.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9c6d75f8121ecc65210fd2c773242e5ac0068ae5/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9c6d75f8121ecc65210fd2c773242e5ac0068ae5&quot;&gt;&lt;tt&gt;9c6d75f&lt;/tt&gt;&lt;/a&gt; Implement helios-core, use Server List Ping protocol.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/430e8405148a4e6448214558f3e623eedc491630/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/430e8405148a4e6448214558f3e623eedc491630&quot;&gt;&lt;tt&gt;430e840&lt;/tt&gt;&lt;/a&gt; Update JDK handling to account for AdoptOpenJDK migration to Adoptium.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/54e657275466294986b6c4977941396e32c03eba/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/54e657275466294986b6c4977941396e32c03eba&quot;&gt;&lt;tt&gt;54e6572&lt;/tt&gt;&lt;/a&gt; Use MCHeads instead of Crafatar (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;940267192&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/181&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/181/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/181&quot;&gt;#181&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/31a51b8e7f17394307a2dfd5489031646489e06c/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/31a51b8e7f17394307a2dfd5489031646489e06c&quot;&gt;&lt;tt&gt;31a51b8&lt;/tt&gt;&lt;/a&gt; MIT License.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/84c13e6972f642f5188fe3b251d00a02e9f9dbf5/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/84c13e6972f642f5188fe3b251d00a02e9f9dbf5&quot;&gt;&lt;tt&gt;84c13e6&lt;/tt&gt;&lt;/a&gt; Update PackXZExtract to v1.2.0&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/be4a42b50a2899c982329ab5b46c4f0b8e119862/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/be4a42b50a2899c982329ab5b46c4f0b8e119862&quot;&gt;&lt;tt&gt;be4a42b&lt;/tt&gt;&lt;/a&gt; Use GitHub Actions for building.
+&lt;ul&gt;
+&lt;li&gt;Later commit updates the build config. See latest version of the file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Fixes&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/f9e4fd85617678fd8991324322b6f9347f4e2462/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/f9e4fd85617678fd8991324322b6f9347f4e2462&quot;&gt;&lt;tt&gt;f9e4fd8&lt;/tt&gt;&lt;/a&gt; &lt;strong&gt;CRITICAL&lt;/strong&gt; Fix Let&#39;s Encrypt DST Root CA X3 certificate expiration.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/79135f310d807f0d347d53d16efcb07c2dd6d71d/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/79135f310d807f0d347d53d16efcb07c2dd6d71d&quot;&gt;&lt;tt&gt;79135f3&lt;/tt&gt;&lt;/a&gt; Fixed broken links on the login page (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;855426105&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/159&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/159/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/159&quot;&gt;#159&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/3ea41b42e5b4c8fd1f4b813301b3a4813cc40601/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/3ea41b42e5b4c8fd1f4b813301b3a4813cc40601&quot;&gt;&lt;tt&gt;3ea41b4&lt;/tt&gt;&lt;/a&gt; Point to https mojang endpoint.&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>dscalzi</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/9703873?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/118847892/v1.8.0</id>
+    <updated>2020-09-16T18:54:07+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v1.8.0"/>
+    <title>Release v1.8.0 - 2020 Maintenance and Fixes</title>
+    <content type="html">&lt;h2&gt;Release v1.8.0&lt;/h2&gt;
+&lt;p&gt;This update contains various fixes and changes from the past year of development and maintenance. Forks should constantly be in sync with master to get the latest changes, fixes, and features.&lt;/p&gt;
+&lt;p&gt;Is your network using Helios and its toolchain? Consider supporting its development &lt;a href=&quot;https://github.com/sponsors/dscalzi&quot;&gt;https://github.com/sponsors/dscalzi&lt;/a&gt;&lt;br&gt;
+Sponsors of a certain tier will be added to the README.&lt;/p&gt;
+&lt;h2&gt;Notable Development Efforts&lt;/h2&gt;
+&lt;h3&gt;Helios v2&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/tree/ts-refactor&quot;&gt;https://github.com/Siberkilleurs/DamnatioLauncher/tree/ts-refactor&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Helios is being rewritten in Typescript, using React as a UI framework. Each system is being rewritten and overhauled using the lessons learned from implementing and maintaining v1.&lt;/p&gt;
+&lt;p&gt;This rewrite has NO ETA. It is being worked on entirely in my freetime and is a massive undertaking. No corners are being cut, and tests are being written for each component. For status updates, monitor the v2 branch or check the discord. Large/current tasks will be posted on the &lt;a href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/projects/1&quot;&gt;v2 project board&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Helios v1 will continue to be maintained for the forseeable future.&lt;/p&gt;
+&lt;h3&gt;Nebula&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/dscalzi/Nebula&quot;&gt;https://github.com/dscalzi/Nebula&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nebula is a tool to automatically generate a distribution.json. Heavy development over the past year has brought it to a usable state. Several minor features are yet to be implemented, none of which will prevent you from generating a full distribution. Once setup, you can generate new server configurations in seconds.&lt;/p&gt;
+&lt;h3&gt;Claritas&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/dscalzi/Claritas&quot;&gt;https://github.com/dscalzi/Claritas&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Claritas is a utility library to extract metadata through bytecode analysis. It is used in Nebula generate accurate entries for forge mods, litemods, and tweakers.&lt;/p&gt;
+&lt;h2&gt;Changelog&lt;/h2&gt;
+&lt;p&gt;Full diff can be viewed &lt;a href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/compare/v1.7.0...v1.8.0&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;New Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/96db60791249b6c70c5eb295dc32fe591320326f/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/96db60791249b6c70c5eb295dc32fe591320326f&quot;&gt;&lt;tt&gt;96db607&lt;/tt&gt;&lt;/a&gt; Support mod loading for 1.7.10.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/7f821f36d782c88ca2955d40199704713d1f17c4/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/7f821f36d782c88ca2955d40199704713d1f17c4&quot;&gt;&lt;tt&gt;7f821f3&lt;/tt&gt;&lt;/a&gt; Support latest 1.12.2 builds (compiled with ForgeGradle 3).&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9a2c1fd9b94471838968165b4b3c7493e772b598/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9a2c1fd9b94471838968165b4b3c7493e772b598&quot;&gt;&lt;tt&gt;9a2c1fd&lt;/tt&gt;&lt;/a&gt; Display the Java vendor on the settings page (ex. Oracle, AdoptOpenJDK, Amazon).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9761c1d9d0fe21218c111531d04b25dcc31d4f58/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9761c1d9d0fe21218c111531d04b25dcc31d4f58&quot;&gt;&lt;tt&gt;9761c1d&lt;/tt&gt;&lt;/a&gt; Provide empty JSON object to forge &lt;code&gt;user_properties&lt;/code&gt; on 1.8.9. (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;523841739&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/40&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/40/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/40&quot;&gt;#40&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/1a2e9f3be4575ba87b29e9f07463ad2b6ec24447/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/1a2e9f3be4575ba87b29e9f07463ad2b6ec24447&quot;&gt;&lt;tt&gt;1a2e9f3&lt;/tt&gt;&lt;/a&gt; Ensure libraries are added to the classpath as &lt;code&gt;.jar&lt;/code&gt; (&lt;code&gt;.pack.xz&lt;/code&gt; extensions were slipping through).&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/1430d0faa22282d8912f8634c3dc54f1865262db/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/1430d0faa22282d8912f8634c3dc54f1865262db&quot;&gt;&lt;tt&gt;1430d0f&lt;/tt&gt;&lt;/a&gt; MacOS platform icon is now a png. (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;623763058&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/68&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/68/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/68&quot;&gt;#68&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/71b25d3e5c2932c1e0f4dc58f3659f7b661fb73a/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/71b25d3e5c2932c1e0f4dc58f3659f7b661fb73a&quot;&gt;&lt;tt&gt;71b25d3&lt;/tt&gt;&lt;/a&gt; Fix passing fullscreen option to 1.13+, fix launch area toggling on 1.13+, added minimum linger time to launch area transition.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/1bdb413ab5a64958f2c14f410fa40fcd2db0c9da/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/1bdb413ab5a64958f2c14f410fa40fcd2db0c9da&quot;&gt;&lt;tt&gt;1bdb413&lt;/tt&gt;&lt;/a&gt; Fixed autoconnect for 1.13, 1.14. Disabled autoconnect for early forge 1.15 builds due to OpenGL issue.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/b09cd2ef28ed4c2502262df4fad0299d0e95ef0d/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/b09cd2ef28ed4c2502262df4fad0299d0e95ef0d&quot;&gt;&lt;tt&gt;b09cd2e&lt;/tt&gt;&lt;/a&gt; Re-enable autoconnect for 1.15.2 on patched forge versions.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/f795b28d230c9cd205b071acdeac30580a29acd3/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/f795b28d230c9cd205b071acdeac30580a29acd3&quot;&gt;&lt;tt&gt;f795b28&lt;/tt&gt;&lt;/a&gt; Fix launching on 1.8.9 and 1.9.4. (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;644010121&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/79&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/issues/79/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/79&quot;&gt;#79&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/eeaa2e98d0eade09d86621be6f511bff0f5e3993/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/eeaa2e98d0eade09d86621be6f511bff0f5e3993&quot;&gt;&lt;tt&gt;eeaa2e9&lt;/tt&gt;&lt;/a&gt; Fix rich presence never leaving Loading Game status. (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;644411122&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/80&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/issues/80/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/80&quot;&gt;#80&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/6b755fef158b09cbfb9b25d5cf7993b0cf53432f/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/6b755fef158b09cbfb9b25d5cf7993b0cf53432f&quot;&gt;&lt;tt&gt;6b755fe&lt;/tt&gt;&lt;/a&gt; MD5 comparisons should ignore case (they&#39;re just hex strings).&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/bd19b165309796bab7111ff32b248cb8ecf6723f/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/bd19b165309796bab7111ff32b248cb8ecf6723f&quot;&gt;&lt;tt&gt;bd19b16&lt;/tt&gt;&lt;/a&gt; Include user&#39;s displayName in server joined regex.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/cc86f2a257c5d5b2e2cd404c8e8799e00364fa07/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/cc86f2a257c5d5b2e2cd404c8e8799e00364fa07&quot;&gt;&lt;tt&gt;cc86f2a&lt;/tt&gt;&lt;/a&gt; Use &lt;code&gt;--fml.modLists&lt;/code&gt; on 1.13+ to avoid potential issues with CLI length limits.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9a2c1fd9b94471838968165b4b3c7493e772b598/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9a2c1fd9b94471838968165b4b3c7493e772b598&quot;&gt;&lt;tt&gt;9a2c1fd&lt;/tt&gt;&lt;/a&gt; Use Corretto 8 on macOS to fix lwjgl issue caused by modern Xcode versions. (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;623790176&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/70&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/issues/70/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/70&quot;&gt;#70&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;See the &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;623790176&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/70&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/issues/70/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/70&quot;&gt;#70&lt;/a&gt; for more details, as this is an important issue.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/17e36fa5a2535131f3c88a9f4fe16968f3990481/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/17e36fa5a2535131f3c88a9f4fe16968f3990481&quot;&gt;&lt;tt&gt;17e36fa&lt;/tt&gt;&lt;/a&gt; Return after rejection in distribution fetch.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/25e7e5aa55207ddcc485b013fdec42ef209dbcf3/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/25e7e5aa55207ddcc485b013fdec42ef209dbcf3&quot;&gt;&lt;tt&gt;25e7e5a&lt;/tt&gt;&lt;/a&gt; Fixes and tweaks for Java discovery on windows.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/c0776dcf613b7742f31b2ee19e11290b85e61b88/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/c0776dcf613b7742f31b2ee19e11290b85e61b88&quot;&gt;&lt;tt&gt;c0776dc&lt;/tt&gt;&lt;/a&gt; Mojang&#39;s status API is returning sessionserver and minecraft.net as red. Set it to green until their endpoint is fixed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/8b04f476eef5f46949c045aefeab0aa85a0d5139/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/8b04f476eef5f46949c045aefeab0aa85a0d5139&quot;&gt;&lt;tt&gt;8b04f47&lt;/tt&gt;&lt;/a&gt; PackXZExtract updated to v1.1.0.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9d1aa497a7285f7c939608cb9c77fdac2a652d55/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/9d1aa497a7285f7c939608cb9c77fdac2a652d55&quot;&gt;&lt;tt&gt;9d1aa49&lt;/tt&gt;&lt;/a&gt; Send integer percentage only to reduce load on the IPC channel. (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;598379872&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/issues/56&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/Siberkilleurs/DamnatioLauncher/pull/56/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/pull/56&quot;&gt;#56&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/64dfc541dcd8ad88facea9c5d3bc6cb20d9de080/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/64dfc541dcd8ad88facea9c5d3bc6cb20d9de080&quot;&gt;&lt;tt&gt;64dfc54&lt;/tt&gt;&lt;/a&gt; Added version to executable name.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/b1abe07aeb79fa8a31dbb5f46b417d3a0a836534/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/b1abe07aeb79fa8a31dbb5f46b417d3a0a836534&quot;&gt;&lt;tt&gt;b1abe07&lt;/tt&gt;&lt;/a&gt; Use new forgot password url.&lt;/li&gt;
+&lt;li&gt;Updated Electron to v10.
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/19ee187f102240643170e700745130c85f644921/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/19ee187f102240643170e700745130c85f644921&quot;&gt;&lt;tt&gt;19ee187&lt;/tt&gt;&lt;/a&gt; &lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/4f504cd4700683f4e6dee02fa3b3856b02559aac/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/4f504cd4700683f4e6dee02fa3b3856b02559aac&quot;&gt;&lt;tt&gt;4f504cd&lt;/tt&gt;&lt;/a&gt; Updated to Electron v7.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/141a753893251f87394ac8dddf6fe54a82ce47e4/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/141a753893251f87394ac8dddf6fe54a82ce47e4&quot;&gt;&lt;tt&gt;141a753&lt;/tt&gt;&lt;/a&gt; Updated to Electron v8.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/8726638a235bae927cb150365b72c6ffdd23d854/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/8726638a235bae927cb150365b72c6ffdd23d854&quot;&gt;&lt;tt&gt;8726638&lt;/tt&gt;&lt;/a&gt; Updated to Electron v9.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/2156099ea8fde013d45cbed2796fb6af713fa918/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/2156099ea8fde013d45cbed2796fb6af713fa918&quot;&gt;&lt;tt&gt;2156099&lt;/tt&gt;&lt;/a&gt; Updated to Electron v10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/46853157ecc00d9362ff75ef4fdcd2f17a63c621/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/46853157ecc00d9362ff75ef4fdcd2f17a63c621&quot;&gt;&lt;tt&gt;4685315&lt;/tt&gt;&lt;/a&gt; Updated ejs to v3.&lt;/li&gt;
+&lt;li&gt;Virtually every dependency has been updated since the last release. Only important updates have been noted here.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Docs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ef8f36b519d3dd3be2edecde327509de17946a2e/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/ef8f36b519d3dd3be2edecde327509de17946a2e&quot;&gt;&lt;tt&gt;ef8f36b&lt;/tt&gt;&lt;/a&gt; Moved sample distribution to docs folder to avoid confusion.&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>dscalzi</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/9703873?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/118847892/v1.7.0</id>
+    <updated>2019-10-18T01:58:23+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v1.7.0"/>
+    <title>Release v1.7.0 - Rebrand to Helios Launcher, Various Fixes.</title>
+    <content type="html">&lt;h2&gt;Release v1.7.0&lt;/h2&gt;
+&lt;p&gt;The project has been rebranded to Helios Launcher (formerly Electron Launcher). Development since v1.6.0 has mostly targeted this effort, as well as general maintenance to make sure the application is performs as expected. Noteworth changes will be detailed below.&lt;/p&gt;
+&lt;h3&gt;Migration to AdoptOpenJDK&lt;/h3&gt;
+&lt;p&gt;Automatic Java installation broke last year as Oracle put downloads for JRE 8 behind a login page. To mitigate this, we&#39;ve switched to AdoptOpenJDK, a service which hosts prebuilt OpenJDK binaries. This change brings two added benefits. The first is that we no longer have to scrape download urls off of webpages, as AdoptOpenJDK provides an API. The second is that we are no longer dependent on Oracle, especially with the licensing changes that have started to come into effect.&lt;/p&gt;
+&lt;p&gt;In the future, the Java discovery system should be upgraded to become more robust and extensible. As of right now, we are not searching known OpenJDK paths for binaries. As with most programs, just add the location to JAVA_HOME to have the launcher discover it.&lt;/p&gt;
+&lt;p&gt;As a final note, cpw&#39;s ModLauncher only supports the HotSpot VM. If you are extending the launcher, keep that in mind.&lt;/p&gt;
+&lt;h3&gt;Update to 1.13 Sample&lt;/h3&gt;
+&lt;p&gt;The launcher does support 1.13, and hopefully 1.14. I have not personally tested a 1.14 configuration at this point. The sample configuration included in this repository has been updated to support forge&#39;s latest (and presumably final) 1.13 release. See the sample configuration for details.&lt;/p&gt;
+&lt;h3&gt;Switch to Electron-Builder&#39;s Programmatic API.&lt;/h3&gt;
+&lt;p&gt;This is a minor change, althouth I feel it&#39;s worth noting. We now invoke Electron-Builder through its programmatic API via build.js. The build scripts have been updated and now point to this.&lt;/p&gt;
+&lt;h3&gt;Eventual Language File Support&lt;/h3&gt;
+&lt;p&gt;I&#39;ve begun the process of moving all strings to a language file so that they can be more easily changed without having to look through each file. This process is partially complete, supporting all HTML files and a handful of Javascript files. No ETA on when this effort will be complete, as it&#39;s a tedious and non-imperative task.&lt;/p&gt;
+&lt;h3&gt;Future Plans&lt;/h3&gt;
+&lt;p&gt;The future of this project will take one of two forms.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Project Rewrite - I&#39;ve learned a lot implementing the initial version of Helios Launcher, and now see various ways in which the project can be improved. A large goal of any rewrite would be to make the core functionality more modular, allowing better independence of version support. Another task would be to rewrite the UI using either Vue or React. This would be an enormous task and require a lot of time, planning, and effort. As such, I really only see it being worthwhile if there would be a large enough demand for the end-product. After all, version 1 works fine and can be maintained indefinitely.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Long-term Maintenance - This would pretty much be exactly what I&#39;ve been doing the last 7 months. QOL updates, dependency upgrades, and adding compatibility with new versions of MC/Java as they come out.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As this is the first update in 7 months, the commit list is rather long. As such, I will not be listing each individual change. More details on what&#39;s been changed can be viewed here:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;commit-link&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/compare/v1.6.0...v1.7.0&quot;&gt;&lt;tt&gt;v1.6.0...v1.7.0&lt;/tt&gt;&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>dscalzi</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/9703873?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/118847892/v1.6.0</id>
+    <updated>2019-09-06T08:25:26+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/Siberkilleurs/DamnatioLauncher/releases/tag/v1.6.0"/>
+    <title>Release v1.6.0 - Forge 1.13 Support, Failed to Verify Username Fixed</title>
+    <content type="html">&lt;h2&gt;Release v1.6.0&lt;/h2&gt;
+&lt;p&gt;This release adds support for Forge 1.13 Beta. Forge is no longer a single jar file, and the version manifest formats have changed. There is also a new system for maven-style mod loading. As a result, the following had to be done:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added new argument parser to prepare arguments provided in both the vanilla and forge version manifest.&lt;/li&gt;
+&lt;li&gt;Added two new distribution types.
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;VersionManifest&lt;/code&gt;&lt;/strong&gt;. This is forge&#39;s version manifest. In 1.12 and below, this was extracted from the universal jar. Now, this file is only present in the installer. As a result it must now be hosted. The file is stored to &lt;code&gt;common/versions/{forge-version}/{forge-version}.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;VersionJar&lt;/code&gt;&lt;/strong&gt;. This is forge&#39;s patched version jar. The file is stored to &lt;code&gt;common/versions/{forge-version}/{forge-version}.jar&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Several more Forge files need to be hosted since it is no longer a single universal jar. These files are generated by the installer. An example is provided in repo&#39;s sample distribution.json. Files can be identified &lt;a href=&quot;https://github.com/MinecraftForge/MinecraftForge/blob/af98088d04186452cb364280340124dfd4766a5c/src/fmllauncher/java/net/minecraftforge/fml/loading/LibraryFinder.java#L82&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Forge 1.13 has a new feature replacing &lt;code&gt;--modListFile&lt;/code&gt;. These are &lt;code&gt;--fml.mavenRoots&lt;/code&gt; and &lt;code&gt;--fml.mods&lt;/code&gt;. All 1.13 configurations now make use of this to load mods.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Failed to verify username is finally fixed.&lt;/strong&gt; The issue was caused when users has fullscreen enabled. The fullscreen argument was not properly passed to the game and therefore overrided whichever argument came directly after it. That argument was &lt;code&gt;--username&lt;/code&gt;, hence the name of the issue. Along with fixing this issue, we reorganzed the launcha arguments to be more coherent and in-line with the vanilla launcher.&lt;/p&gt;
+&lt;h3&gt;Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/81367bc6198f6cc4b0ef39824f1d2112ca40d3c3/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/81367bc6198f6cc4b0ef39824f1d2112ca40d3c3&quot;&gt;&lt;tt&gt;81367bc&lt;/tt&gt;&lt;/a&gt; Support for launching Forge 1.13.2 Beta.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/e08c3a903aad1f2d0a996ab9958c1b6eedd546f6/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/e08c3a903aad1f2d0a996ab9958c1b6eedd546f6&quot;&gt;&lt;tt&gt;e08c3a9&lt;/tt&gt;&lt;/a&gt; Support for Forge 1.13.2&#39;s replacement of &lt;code&gt;--modListFile&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/c834ca971abae6363c7c431e3a6516b9300a01fd/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/c834ca971abae6363c7c431e3a6516b9300a01fd&quot;&gt;&lt;tt&gt;c834ca9&lt;/tt&gt;&lt;/a&gt; Reorder the launch arguments to be more organized, predictable, and in line with the vanilla launcher.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/c834ca971abae6363c7c431e3a6516b9300a01fd/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/c834ca971abae6363c7c431e3a6516b9300a01fd&quot;&gt;&lt;tt&gt;c834ca9&lt;/tt&gt;&lt;/a&gt; Fixed application of the &lt;code&gt;--fullscreen&lt;/code&gt; argument to not block other arguments. In particular, this used to block &lt;code&gt;--username&lt;/code&gt; from being registered, resulting in the infamous issue &lt;em&gt;failed to verify username&lt;/em&gt;. That will no longer happen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Dependency Upgrades&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/6b96770c98d0aaf0714663aa950fff28af16f1f9/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/6b96770c98d0aaf0714663aa950fff28af16f1f9&quot;&gt;&lt;tt&gt;6b96770&lt;/tt&gt;&lt;/a&gt; Fresh Installation
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;async@3.0.1-0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&quot;commit-link&quot; data-hovercard-type=&quot;commit&quot; data-hovercard-url=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/e8e7f85c640b87977c9113fa276c7a48317ae21d/hovercard&quot; href=&quot;https://github.com/Siberkilleurs/DamnatioLauncher/commit/e8e7f85c640b87977c9113fa276c7a48317ae21d&quot;&gt;&lt;tt&gt;e8e7f85&lt;/tt&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;electron@4.0.5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;eslint@5.14.0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>dscalzi</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/9703873?s=60&amp;v=4"/>
+  </entry>
+</feed>
