@@ -1,5 +1,5 @@
 appId: 'damnatiolauncher'
-productName: 'Damnatio Launcher'
+productName: 'DamnatioLauncher'
 artifactName: '${productName}-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2018-2022 Daniel Scalzi'
