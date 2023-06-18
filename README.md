@@ -50,5 +50,3 @@ Build for a specific platform need to be on the platform.
 | Windows x64 | `npm run dist:win`   |
 | macOS       | `npm run dist:mac`   |
 | Linux x64   | `npm run dist:linux` |
-
-For instructions on setting up Microsoft Authentication, see https://github.com/dscalzi/HeliosLauncher/blob/master/docs/MicrosoftAuth.md.
