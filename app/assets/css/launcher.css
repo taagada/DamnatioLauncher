@@ -2490,7 +2490,7 @@ input:checked + .toggleSwitchSlider:before {
     top: 0px;
     height: 100%;
     width: 33%;
-    margin-left: -4%;
+    margin-left: -10%;
     display: inline-flex;
     justify-content: center;
 }
@@ -2506,8 +2506,7 @@ input:checked + .toggleSwitchSlider:before {
     transition: top 2s ease;
     top: 0px;
     height: 100%;
-    width: 100%;
-    margin-left: 5%;
+    margin-left: 25%;
     display: inline-flex;
     justify-content: center;
 }
@@ -3405,6 +3404,7 @@ input:checked + .toggleSwitchSlider:before {
     text-shadow: 0px 0px 0px #bebcbb;
     font-size: 40px;
     margin-top: -30%;
+    margin-left: 250%;
     padding: 0px;
     transition: 0.25s ease;
     outline: none;
@@ -3426,8 +3426,8 @@ input:checked + .toggleSwitchSlider:before {
 /* Launch details main container, hidden until launch processing begins. */
 #launch_details {
     position: relative;
-    top: 10px;
-    left: -20%;
+    top: 15px;
+    left: 45%;
     display: none;
 }
  
