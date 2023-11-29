@@ -29,33 +29,6 @@ const log = LoggerUtil.getLogger('AuthManager')
  * @param {string} password The account password.
  * @returns {Promise.<Object>} Promise which resolves the resolved authenticated account object.
  */
-exports.addMojangAccount = async function(username, password) {
-    try {
-        const response = await MojangRestAPI.authenticate(username, password, ConfigManager.getClientToken())
-        console.log(response)
-        if(response.responseStatus === RestResponseStatus.SUCCESS) {
-
-            const session = response.data
-            if(session.selectedProfile != null){
-                const ret = ConfigManager.addMojangAuthAccount(session.selectedProfile.id, session.accessToken, username, session.selectedProfile.name)
-                if(ConfigManager.getClientToken() == null){
-                    ConfigManager.setClientToken(session.clientToken)
-                }
-                ConfigManager.save()
-                return ret
-            } else {
-                return Promise.reject(mojangErrorDisplayable(MojangErrorCode.ERROR_NOT_PAID))
-            }
-
-        } else {
-            return Promise.reject(mojangErrorDisplayable(response.mojangErrorCode))
-        }
-        
-    } catch (err){
-        log.error(err)
-        return Promise.reject(mojangErrorDisplayable(MojangErrorCode.UNKNOWN))
-    }
-}
 
 const AUTH_MODE = { FULL: 0, MS_REFRESH: 1, MC_REFRESH: 2 }
 
@@ -163,23 +136,7 @@ exports.addMicrosoftAccount = async function(authCode) {
  * @param {string} uuid The UUID of the account to be removed.
  * @returns {Promise.<void>} Promise which resolves to void when the action is complete.
  */
-exports.removeMojangAccount = async function(uuid){
-    try {
-        const authAcc = ConfigManager.getAuthAccount(uuid)
-        const response = await MojangRestAPI.invalidate(authAcc.accessToken, ConfigManager.getClientToken())
-        if(response.responseStatus === RestResponseStatus.SUCCESS) {
-            ConfigManager.removeAuthAccount(uuid)
-            ConfigManager.save()
-            return Promise.resolve()
-        } else {
-            log.error('Error while removing account', response.error)
-            return Promise.reject(response.error)
-        }
-    } catch (err){
-        log.error('Error while removing account', err)
-        return Promise.reject(err)
-    }
-}
+
 
 /**
  * Remove a Microsoft account. It is expected that the caller will invoke the OAuth logout
@@ -207,32 +164,7 @@ exports.removeMicrosoftAccount = async function(uuid){
  * @returns {Promise.<boolean>} Promise which resolves to true if the access token is valid,
  * otherwise false.
  */
-async function validateSelectedMojangAccount(){
-    const current = ConfigManager.getSelectedAccount()
-    const response = await MojangRestAPI.validate(current.accessToken, ConfigManager.getClientToken())
 
-    if(response.responseStatus === RestResponseStatus.SUCCESS) {
-        const isValid = response.data
-        if(!isValid){
-            const refreshResponse = await MojangRestAPI.refresh(current.accessToken, ConfigManager.getClientToken())
-            if(refreshResponse.responseStatus === RestResponseStatus.SUCCESS) {
-                const session = refreshResponse.data
-                ConfigManager.updateMojangAuthAccount(current.uuid, session.accessToken)
-                ConfigManager.save()
-            } else {
-                log.error('Error while validating selected profile:', refreshResponse.error)
-                log.info('Account access token is invalid.')
-                return false
-            }
-            log.info('Account access token validated.')
-            return true
-        } else {
-            log.info('Account access token validated.')
-            return true
-        }
-    }
-    
-}
 
 /**
  * Validate the selected account with Microsoft's authserver. If the account is not valid,
@@ -308,8 +240,6 @@ exports.validateSelected = async function(){
 
     if(current.type === 'microsoft') {
         return await validateSelectedMicrosoftAccount()
-    } else {
-        return await validateSelectedMojangAccount()
     }
     
 }

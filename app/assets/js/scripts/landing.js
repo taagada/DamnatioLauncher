@@ -165,20 +165,11 @@ function updateSelectedServer(serv){
     }
     ConfigManager.setSelectedServer(serv != null ? serv.rawServer.id : null)
     ConfigManager.save()
-    server_selection_button.innerHTML = '\u2022 ' + (serv != null ? serv.rawServer.name : 'No Server Selected')
     if(getCurrentView() === VIEWS.settings){
         animateSettingsTabRefresh()
     }
     setLaunchEnabled(serv != null)
 }
-// Real text is set in uibinder.js on distributionIndexDone.
-server_selection_button.innerHTML = '\u2022 Loading..'
-server_selection_button.onclick = async e => {
-    e.target.blur()
-    await toggleServerSelection(true)
-}
-
-
 
 const refreshServerStatus = async (fade = false) => {
     loggerLanding.info('Refreshing Server Status')
