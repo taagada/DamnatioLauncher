@@ -7,7 +7,7 @@ const logger = LoggerUtil.getLogger('ConfigManager')
 
 const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
 
-const dataPath = path.join(sysRoot, '.helioslauncher')
+const dataPath = path.join(sysRoot, '.damnatio')
 
 const launcherDir = require('@electron/remote').app.getPath('userData')
 
@@ -81,7 +81,7 @@ const DEFAULT_CONFIG = {
             resWidth: 1280,
             resHeight: 720,
             fullscreen: false,
-            autoConnect: true,
+            autoConnect: false,
             launchDetached: true
         },
         launcher: {
@@ -321,11 +321,6 @@ exports.getAuthAccount = function(uuid){
  * 
  * @returns {Object} The authenticated account object created by this action.
  */
-exports.updateMojangAuthAccount = function(uuid, accessToken){
-    config.authenticationDatabase[uuid].accessToken = accessToken
-    config.authenticationDatabase[uuid].type = 'mojang' // For gradual conversion.
-    return config.authenticationDatabase[uuid]
-}
 
 /**
  * Adds an authenticated mojang account to the database to be stored.
@@ -337,17 +332,6 @@ exports.updateMojangAuthAccount = function(uuid, accessToken){
  * 
  * @returns {Object} The authenticated account object created by this action.
  */
-exports.addMojangAuthAccount = function(uuid, accessToken, username, displayName){
-    config.selectedAccount = uuid
-    config.authenticationDatabase[uuid] = {
-        type: 'mojang',
-        accessToken,
-        username: username.trim(),
-        uuid: uuid.trim(),
-        displayName: displayName.trim()
-    }
-    return config.authenticationDatabase[uuid]
-}
 
 /**
  * Update the tokens of an authenticated microsoft account.

@@ -326,7 +326,6 @@ function fullSettingsSave() {
     saveModConfiguration()
     ConfigManager.save()
     saveDropinModConfiguration()
-    saveShaderpackSettings()
 }
 
 /* Closes the settings view and saves all data. */
@@ -341,15 +340,6 @@ settingsNavDone.onclick = () => {
 
 const msftLoginLogger = LoggerUtil.getLogger('Microsoft Login')
 const msftLogoutLogger = LoggerUtil.getLogger('Microsoft Logout')
-
-// Bind the add mojang account button.
-document.getElementById('settingsAddMojangAccount').onclick = (e) => {
-    switchView(getCurrentView(), VIEWS.login, 500, 500, () => {
-        loginViewOnCancel = VIEWS.settings
-        loginViewOnSuccess = VIEWS.settings
-        loginCancelEnabled(true)
-    })
-}
 
 // Bind the add microsoft account button.
 document.getElementById('settingsAddMicrosoftAccount').onclick = (e) => {
@@ -518,24 +508,6 @@ function processLogOut(val, isLastAccount){
         switchView(getCurrentView(), VIEWS.waiting, 500, 500, () => {
             ipcRenderer.send(MSFT_OPCODE.OPEN_LOGOUT, uuid, isLastAccount)
         })
-    } else {
-        AuthManager.removeMojangAccount(uuid).then(() => {
-            if(!isLastAccount && uuid === prevSelAcc.uuid){
-                const selAcc = ConfigManager.getSelectedAccount()
-                refreshAuthAccountSelected(selAcc.uuid)
-                updateSelectedAccount(selAcc)
-                validateSelectedAccount()
-            }
-            if(isLastAccount) {
-                loginOptionsCancelEnabled(false)
-                loginOptionsViewOnLoginSuccess = VIEWS.settings
-                loginOptionsViewOnLoginCancel = VIEWS.loginOptions
-                switchView(getCurrentView(), VIEWS.loginOptions)
-            }
-        })
-        $(parent).fadeOut(250, () => {
-            parent.remove()
-        })
     }
 }
 
@@ -619,7 +591,6 @@ function refreshAuthAccountSelected(uuid){
 }
 
 const settingsCurrentMicrosoftAccounts = document.getElementById('settingsCurrentMicrosoftAccounts')
-const settingsCurrentMojangAccounts = document.getElementById('settingsCurrentMojangAccounts')
 
 /**
  * Add auth account elements for each one stored in the authentication database.
@@ -633,7 +604,6 @@ function populateAuthAccounts(){
     const selectedUUID = ConfigManager.getSelectedAccount().uuid
 
     let microsoftAuthAccountStr = ''
-    let mojangAuthAccountStr = ''
 
     authKeys.forEach((val) => {
         const acc = authAccounts[val]
@@ -664,14 +634,11 @@ function populateAuthAccounts(){
 
         if(acc.type === 'microsoft') {
             microsoftAuthAccountStr += accHtml
-        } else {
-            mojangAuthAccountStr += accHtml
         }
 
     })
 
     settingsCurrentMicrosoftAccounts.innerHTML = microsoftAuthAccountStr
-    settingsCurrentMojangAccounts.innerHTML = mojangAuthAccountStr
 }
 
 /**
@@ -972,8 +939,6 @@ document.addEventListener('keydown', async (e) => {
     if(getCurrentView() === VIEWS.settings && selectedSettingsTab === 'settingsTabMods'){
         if(e.key === 'F5'){
             await reloadDropinMods()
-            saveShaderpackSettings()
-            await resolveShaderpacksForUI()
         }
     }
 })
@@ -985,85 +950,7 @@ async function reloadDropinMods(){
     bindModsToggleSwitch()
 }
 
-// Shaderpack
 
-let CACHE_SETTINGS_INSTANCE_DIR
-let CACHE_SHADERPACKS
-let CACHE_SELECTED_SHADERPACK
-
-/**
- * Load shaderpack information.
- */
-async function resolveShaderpacksForUI(){
-    const serv = (await DistroAPI.getDistribution()).getServerById(ConfigManager.getSelectedServer())
-    CACHE_SETTINGS_INSTANCE_DIR = path.join(ConfigManager.getInstanceDirectory(), serv.rawServer.id)
-    CACHE_SHADERPACKS = DropinModUtil.scanForShaderpacks(CACHE_SETTINGS_INSTANCE_DIR)
-    CACHE_SELECTED_SHADERPACK = DropinModUtil.getEnabledShaderpack(CACHE_SETTINGS_INSTANCE_DIR)
-
-    setShadersOptions(CACHE_SHADERPACKS, CACHE_SELECTED_SHADERPACK)
-}
-
-function setShadersOptions(arr, selected){
-    const cont = document.getElementById('settingsShadersOptions')
-    cont.innerHTML = ''
-    for(let opt of arr) {
-        const d = document.createElement('DIV')
-        d.innerHTML = opt.name
-        d.setAttribute('value', opt.fullName)
-        if(opt.fullName === selected) {
-            d.setAttribute('selected', '')
-            document.getElementById('settingsShadersSelected').innerHTML = opt.name
-        }
-        d.addEventListener('click', function(e) {
-            this.parentNode.previousElementSibling.innerHTML = this.innerHTML
-            for(let sib of this.parentNode.children){
-                sib.removeAttribute('selected')
-            }
-            this.setAttribute('selected', '')
-            closeSettingsSelect()
-        })
-        cont.appendChild(d)
-    }
-}
-
-function saveShaderpackSettings(){
-    let sel = 'OFF'
-    for(let opt of document.getElementById('settingsShadersOptions').childNodes){
-        if(opt.hasAttribute('selected')){
-            sel = opt.getAttribute('value')
-        }
-    }
-    DropinModUtil.setEnabledShaderpack(CACHE_SETTINGS_INSTANCE_DIR, sel)
-}
-
-function bindShaderpackButton() {
-    const spBtn = document.getElementById('settingsShaderpackButton')
-    spBtn.onclick = () => {
-        const p = path.join(CACHE_SETTINGS_INSTANCE_DIR, 'shaderpacks')
-        DropinModUtil.validateDir(p)
-        shell.openPath(p)
-    }
-    spBtn.ondragenter = e => {
-        e.dataTransfer.dropEffect = 'move'
-        spBtn.setAttribute('drag', '')
-        e.preventDefault()
-    }
-    spBtn.ondragover = e => {
-        e.preventDefault()
-    }
-    spBtn.ondragleave = e => {
-        spBtn.removeAttribute('drag')
-    }
-
-    spBtn.ondrop = async e => {
-        spBtn.removeAttribute('drag')
-        e.preventDefault()
-
-        DropinModUtil.addShaderpacks(e.dataTransfer.files, CACHE_SETTINGS_INSTANCE_DIR)
-        saveShaderpackSettings()
-        await resolveShaderpacksForUI()
-    }
-}
 
 // Server status bar functions.
 
@@ -1132,10 +1019,8 @@ function animateSettingsTabRefresh(){
 async function prepareModsTab(first){
     await resolveModsForUI()
     await resolveDropinModsForUI()
-    await resolveShaderpacksForUI()
     bindDropinModsRemoveButton()
     bindDropinModFileSystemButton()
-    bindShaderpackButton()
     bindModsToggleSwitch()
     await loadSelectedServerOnModsTab()
 }
@@ -1453,7 +1338,7 @@ function populateAboutVersionInformation(){
  */
 function populateReleaseNotes(){
     $.ajax({
-        url: 'https://github.com/dscalzi/HeliosLauncher/releases.atom',
+        url: 'https://github.com/Siberkilleurs/DamnatioLauncher/releases.atom',
         success: (data) => {
             const version = 'v' + remote.app.getVersion()
             const entries = $(data).find('entry')
