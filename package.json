@@ -5,9 +5,9 @@
   "description": "Damnatio Modded Minecraft Launcher",
   "author": "Daniel Scalzi & Taagada (https://github.com/dscalzi/)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/Siberkilleurs/DamnatioLauncher",
+  "homepage": "https://github.com/taagada/DamnatioLauncher",
   "bugs": {
-    "url": "https://github.com/Siberkilleurs/DamnatioLauncher/issues"
+    "url": "https://github.com/taagada/DamnatioLauncher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -46,6 +46,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Siberkilleurs/DamnatioLauncher.git"
+    "url": "git+https://github.com/taagada/DamnatioLauncher.git"
   }
 }
