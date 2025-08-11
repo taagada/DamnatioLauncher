@@ -1,4 +1,4 @@
-<p align="center"><img src="./app/assets/images/SealCircle.png" width="150px" height="150px" alt="aventium softworks"></p>
+<p align="center"><img src="https://damnatio.eu/storage/img/banner.png"></p>
 
 <h1 align="center">Damnatio Launcher</h1>
 
@@ -17,11 +17,7 @@
   * You do not need to have Java installed to run the launcher.
 * 📰 News feed natively built into the launcher.
 * ⚙️ Intuitive settings management, including a Java control panel.
-* Supports all of our servers.
-  * Switch between server configurations with ease.
-  * View the player count of the selected server.
 * Automatic updates. That's right, the launcher updates itself.
-*  View the status of Mojang's services.
 
 This is not an exhaustive list. Download and install the launcher to gauge all it can do!
 
