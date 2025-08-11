@@ -494,12 +494,28 @@ exports.setModConfiguration = function(serverid, configuration){
 function defaultJavaConfig(effectiveJavaOptions, ram) {
     if(effectiveJavaOptions.suggestedMajor > 8) {
         return defaultJavaConfig17(ram)
+    } else if (effectiveJavaOptions.suggestedMajor == 21) {
+        return defaultJavaConfigCleanroom(ram)
     } else {
         return defaultJavaConfig8(ram)
     }
 }
 
 function defaultJavaConfig8(ram) {
+    return {
+        minRAM: resolveSelectedRAM(ram),
+        maxRAM: resolveSelectedRAM(ram),
+        executable: null,
+        jvmOptions: [
+            '-XX:+UseConcMarkSweepGC',
+            '-XX:+CMSIncrementalMode',
+            '-XX:-UseAdaptiveSizePolicy',
+            '-Xmn128M'
+        ],
+    }
+}
+
+function defaultJavaConfigCleanroom(ram) {
     return {
         minRAM: resolveSelectedRAM(ram),
         maxRAM: resolveSelectedRAM(ram),
