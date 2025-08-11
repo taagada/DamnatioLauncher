@@ -521,7 +521,10 @@ function defaultJavaConfigCleanroom(ram) {
         maxRAM: resolveSelectedRAM(ram),
         executable: null,
         jvmOptions: [
-            '-Xmn1024M'
+            '-XX:+UseConcMarkSweepGC',
+            '-XX:+CMSIncrementalMode',
+            '-XX:-UseAdaptiveSizePolicy',
+            '-Xmn128M'
         ],
     }
 }
