@@ -33,10 +33,18 @@ Ensure that you have the console tab selected. Do not paste anything into the co
 
 **Build Installers**
 
-To build for your current platform.
+To build for your current platform. You first need to install dependencies.
 
 ```console
-> npm run dist
+npm install
+```
+
+Then ensure `node_modules/helios-core/dist/dl/mojang/MojangIndexProcessor.js` has been updated on line 85-86 like in the <a href="https://github.com/taagada/DamnatioLauncher/blob/master/node_modules/helios-core/dist/dl/mojang/MojangIndexProcessor.js#L85">github</a>.
+
+Then run next command to create the executable (create the executable depend on the platform your using).
+
+```console
+npm run dist
 ```
 
 Build for a specific platform need to be on the platform.
