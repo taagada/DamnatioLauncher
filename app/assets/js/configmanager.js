@@ -620,7 +620,14 @@ exports.setJavaExecutable = function(serverid, executable){
  * @returns {Array.<string>} An array of the additional arguments for JVM initialization.
  */
 exports.getJVMOptions = function(serverid){
-    return config.javaConfig[serverid].jvmOptions
+    return [
+                "-XX:+UnlockExperimentalVMOptions",
+                "-XX:+UseG1GC",
+                "-XX:G1NewSizePercent=20",
+                "-XX:G1ReservePercent=20",
+                "-XX:MaxGCPauseMillis=50",
+                "-XX:G1HeapRegionSize=32M"
+            ]
 }
 
 /**
@@ -633,7 +640,14 @@ exports.getJVMOptions = function(serverid){
  * initialization.
  */
 exports.setJVMOptions = function(serverid, jvmOptions){
-    config.javaConfig[serverid].jvmOptions = jvmOptions
+    config.javaConfig[serverid].jvmOptions = [
+                "-XX:+UnlockExperimentalVMOptions",
+                "-XX:+UseG1GC",
+                "-XX:G1NewSizePercent=20",
+                "-XX:G1ReservePercent=20",
+                "-XX:MaxGCPauseMillis=50",
+                "-XX:G1HeapRegionSize=32M"
+            ]
 }
 
 // Game Settings
