@@ -35,13 +35,17 @@ Ensure that you have the console tab selected. Do not paste anything into the co
 
 To build for your current platform.
 
-```npm install```
+```console
+npm install
+```
 
 Ensure `node_modules/helios-core/dist/dl/mojang/MojangIndexProcessor.js` has been updated on line 85-86 like in the github.
 
 Then run next command to crate the executable (create the executable depend on the platform your using)
 
-```npm run dist```
+```console
+npm run dist
+```
 
 Build for a specific platform need to be on the platform.
 
