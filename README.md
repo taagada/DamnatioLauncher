@@ -41,7 +41,7 @@ npm install
 
 Then ensure `node_modules/helios-core/dist/dl/mojang/MojangIndexProcessor.js` has been updated on line 85-86 like in the <a href="https://github.com/taagada/DamnatioLauncher/blob/master/node_modules/helios-core/dist/dl/mojang/MojangIndexProcessor.js#L85">github</a>.
 
-Then run next command to crate the executable (create the executable depend on the platform your using)
+Then run next command to create the executable (create the executable depend on the platform your using).
 
 ```console
 npm run dist
