@@ -33,13 +33,13 @@ Ensure that you have the console tab selected. Do not paste anything into the co
 
 **Build Installers**
 
-To build for your current platform.
+To build for your current platform. You first need to install dependencies.
 
 ```console
 npm install
 ```
 
-Ensure `node_modules/helios-core/dist/dl/mojang/MojangIndexProcessor.js` has been updated on line 85-86 like in the github.
+Then ensure `node_modules/helios-core/dist/dl/mojang/MojangIndexProcessor.js` has been updated on line 85-86 like in the (github)[https://github.com/taagada/DamnatioLauncher/blob/master/node_modules/helios-core/dist/dl/mojang/MojangIndexProcessor.js#L85].
 
 Then run next command to crate the executable (create the executable depend on the platform your using)
 
