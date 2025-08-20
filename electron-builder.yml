@@ -2,7 +2,7 @@ appId: 'damnatiolauncher'
 productName: 'DamnatioLauncher'
 artifactName: '${productName}-setup-${version}.${ext}'
 
-copyright: 'Copyright © 2018-2024 Daniel Scalzi'
+copyright: 'Copyright © 2025 Taagada'
 
 asar: true
 compression: 'maximum'
@@ -39,8 +39,8 @@ mac:
 # Linux Configuration
 linux: 
   target: 'AppImage'
-  maintainer: 'Daniel Scalzi & Taagada (https://github.com/dscalzi/)'
-  vendor: 'Daniel Scalzi & Taagada (https://github.com/dscalzi/)'
+  maintainer: 'Daniel Scalzi & Taagada (https://github.com/taagada/)'
+  vendor: 'Daniel Scalzi & Taagada (https://github.com/taagada/)'
   synopsis: 'Damnatio Modded Minecraft Launcher'
   description: 'Damnatio Modded Minecraft Launcher'
   category: 'Game'
