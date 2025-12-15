@@ -1,13 +1,13 @@
 {
   "name": "damnatiolauncher",
-  "version": "2.3.3",
+  "version": "2.4.0",
   "productName": "DamnatioLauncher",
   "description": "Damnatio Modded Minecraft Launcher",
   "author": "Daniel Scalzi & Taagada (https://github.com/dscalzi/)",
   "license": "UNLICENSED",
   "homepage": "https://github.com/taagada/DamnatioLauncher",
   "bugs": {
-    "url": "https://github.com/taagada/DamnatioLauncher/issues"
+    "url": "https://discord.damnatio.eu"
   },
   "private": true,
   "main": "index.js",
